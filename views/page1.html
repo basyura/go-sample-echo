@@ -1,3 +1,9 @@
 {{define "page1"}} {{template "header" .}}
+<script src="/assets/js/chart.js"></script>
+<script src="/assets/js/page1.js"></script>
 <div>{{.Content}}</div>
+
+<div style="padding:10px">
+  <canvas id="myChart"></canvas>
+</div>
 {{end}}

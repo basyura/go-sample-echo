@@ -37,6 +37,7 @@ func main() {
 	e.Renderer = &Template{
 		templates: template.Must(template.ParseGlob("views/*.html")),
 	}
+	e.Static("/assets/js", "assets/js")
 
 	e.GET("/page1", func(c echo.Context) error {
 		dto := Page1ReqDto{
