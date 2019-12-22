@@ -3,8 +3,9 @@ package main
 import (
 	"html/template"
 	"io"
-	"net/http"
 
+	"github.com/basyura/go-sample-echo/action"
+	"github.com/basyura/go-sample-echo/dto"
 	"github.com/labstack/echo"
 )
 
@@ -16,18 +17,9 @@ func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Con
 	return t.templates.ExecuteTemplate(w, name, data)
 }
 
-type ServiceInfo struct {
-	Title string
-}
-
-type Page1ReqDto struct {
-	ServiceInfo
-	Content string
-}
-
 // サイトで共通情報
-var serviceInfo = ServiceInfo{
-	"サイトのタイトル",
+var serviceInfo = dto.ServiceInfo{
+	Title: "サイトのタイトル",
 }
 
 func main() {
@@ -37,14 +29,12 @@ func main() {
 	e.Renderer = &Template{
 		templates: template.Must(template.ParseGlob("views/*.html")),
 	}
+
+	// url パス, ディレクトリパス
 	e.Static("/assets/js", "assets/js")
 
 	e.GET("/page1", func(c echo.Context) error {
-		dto := Page1ReqDto{
-			ServiceInfo: serviceInfo,
-			Content:     "ページのコンテンツ",
-		}
-		return c.Render(http.StatusOK, "page1", dto)
+		return (&action.Page1{}).Execute(c, serviceInfo)
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))
