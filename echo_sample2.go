@@ -35,20 +35,30 @@ func main() {
 	e.Static("/assets/js", "assets/js")
 
 	e.GET("/page1", func(c echo.Context) error {
+		fmt.Println("get /page1")
 		for k, v := range c.QueryParams() {
 			fmt.Println(k, "=", v)
 		}
 		return (&action.Page1{}).Execute(c, serviceInfo)
 	})
 
+	e.POST("/page1", func(c echo.Context) error {
+		fmt.Println("post /page1")
+		id1 := c.FormValue("id")
+		fmt.Println("id1:", id1)
+		return (&action.Page1{}).Execute(c, serviceInfo)
+	})
+
 	e.GET("/page1/:user", func(c echo.Context) error {
+		fmt.Println("get /page1/:user")
 		fmt.Println("path :", c.Param("user"))
 		return (&action.Page1{}).Execute(c, serviceInfo)
 	})
 
-	e.POST("/page1", func(c echo.Context) error {
-		id1 := c.FormValue("id")
-		fmt.Println("id1:", id1)
+	e.POST("/page1/:user", func(c echo.Context) error {
+		fmt.Println("post /page1/:user")
+		fmt.Println("path :", c.Param("user"))
+		fmt.Println("  id :", c.FormValue("id"))
 		return (&action.Page1{}).Execute(c, serviceInfo)
 	})
 
