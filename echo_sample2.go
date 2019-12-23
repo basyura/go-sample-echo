@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"io"
 
@@ -34,6 +35,20 @@ func main() {
 	e.Static("/assets/js", "assets/js")
 
 	e.GET("/page1", func(c echo.Context) error {
+		for k, v := range c.QueryParams() {
+			fmt.Println(k, "=", v)
+		}
+		return (&action.Page1{}).Execute(c, serviceInfo)
+	})
+
+	e.GET("/page1/:user", func(c echo.Context) error {
+		fmt.Println("path :", c.Param("user"))
+		return (&action.Page1{}).Execute(c, serviceInfo)
+	})
+
+	e.POST("/page1", func(c echo.Context) error {
+		id1 := c.FormValue("id")
+		fmt.Println("id1:", id1)
 		return (&action.Page1{}).Execute(c, serviceInfo)
 	})
 
