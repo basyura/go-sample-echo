@@ -1,0 +1,9 @@
+.chartWrapper {
+  wdith:100%;
+  overflow-x:auto;
+}
+
+.chartAreaWrapper {
+    height: 300px;
+    width: 3000px;
+}

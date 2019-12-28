@@ -1,14 +1,18 @@
 {{define "page1"}} {{template "header" .}}
 <script src="/assets/js/chart.js"></script>
 <script src="/assets/js/page1.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/page1.css" />
+
 <div>{{.Content}}</div>
 
 <form method="post">
   <input type="text" name="id" />
   <input type="submit" />
 </form>
-
-<div style="padding:10px">
-  <canvas id="myChart"></canvas>
+<div class="chartWrapper">
+  <div class="chartAreaWrapper">
+    <canvas id="myChart" height="300px" width="0"></canvas>
+  </div>
 </div>
+
 {{end}}

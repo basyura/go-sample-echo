@@ -33,6 +33,7 @@ func main() {
 
 	// url パス, ディレクトリパス
 	e.Static("/assets/js", "assets/js")
+	e.Static("/assets/css", "assets/css")
 
 	e.GET("/page1", func(c echo.Context) error {
 		fmt.Println("get /page1")

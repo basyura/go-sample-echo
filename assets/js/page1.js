@@ -3,13 +3,14 @@
  */
 window.onload = function() {
   var ctx = document.getElementById('myChart').getContext('2d');
-  var chart = new Chart(ctx, {
+
+  params = {
     // The type of chart we want to create
     type: 'line',
 
     // The data for our dataset
     data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: [],
       datasets: [
         {
           label: 'line1',
@@ -25,10 +26,29 @@ window.onload = function() {
           borderColor: 'blue',
           data: [5, 15, 15, 25, 25, 30, 35],
         },
+        {
+          label: 'line3',
+          fill: false,
+          backgroundColor: 'green',
+          borderColor: 'green',
+          data: [5, 10, 10, 35, 15, 20, 35],
+        },
+        {
+          label: 'line4',
+          fill: false,
+          backgroundColor: 'green',
+          borderColor: 'green',
+          data: [40, 40, 40, null, 40, 40, 40],
+        },
       ],
     },
 
     // Configuration options go here
     options: {},
-  });
+  };
+
+  for (var i = 0; i < 100; i++) {
+    params.data.labels.push(i.toString());
+  }
+  var chart = new Chart(ctx, params);
 };
