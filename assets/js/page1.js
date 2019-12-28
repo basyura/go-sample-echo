@@ -13,42 +13,81 @@ window.onload = function() {
       labels: [],
       datasets: [
         {
-          label: 'line1',
           fill: false,
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: [0, 10, 5, 2, 20, 30, 45],
+          backgroundColor: 'green',
+          borderColor: 'green',
+          data: [9, 9, 9],
         },
         {
-          label: 'line2',
+          fill: false,
+          backgroundColor: 'orange',
+          borderColor: 'orange',
+          data: [null, null, 9, 9, 9, 9, 9],
+        },
+        {
           fill: false,
           backgroundColor: 'blue',
           borderColor: 'blue',
-          data: [5, 15, 15, 25, 25, 30, 35],
+          data: [null, null, null, null, null, null, 9, 9, 9],
         },
         {
-          label: 'line3',
+          fill: false,
+          backgroundColor: 'red',
+          borderColor: 'red',
+          data: [null, null, null, null, null, null, null, null, 9, 9, 9],
+        },
+
+        {
           fill: false,
           backgroundColor: 'green',
           borderColor: 'green',
-          data: [5, 10, 10, 35, 15, 20, 35],
+          data: [null, null, 8, 8],
         },
         {
-          label: 'line4',
           fill: false,
-          backgroundColor: 'green',
-          borderColor: 'green',
-          data: [40, 40, 40, null, 40, 40, 40],
+          backgroundColor: 'orange',
+          borderColor: 'orange',
+          data: [null, null, null, 8, 8],
+        },
+        {
+          fill: false,
+          backgroundColor: 'blue',
+          borderColor: 'blue',
+          data: [null, null, null, null, 8, 8, 8, 8],
+        },
+        {
+          fill: false,
+          backgroundColor: 'red',
+          borderColor: 'red',
+          data: [null, null, null, null, null, null, null, 8, 8],
         },
       ],
     },
 
     // Configuration options go here
-    options: {},
+    options: {
+      legend: {
+        display: false,
+      },
+      tooltips: {
+        enabled: false,
+      },
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              display: false,
+              min: 0,
+              max: 10,
+              stepSize: 1,
+            },
+          },
+        ],
+      },
+    },
   };
-
   for (var i = 0; i < 100; i++) {
-    params.data.labels.push(i.toString());
+    params.data.labels.push((i * 50).toString());
   }
   var chart = new Chart(ctx, params);
 };

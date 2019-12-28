@@ -6,4 +6,11 @@
 .chartAreaWrapper {
     height: 300px;
     width: 3000px;
+/*  margin-left:-27px; */
+}
+
+.leftWrapper {
+  width: 200px;
+  line-height:26px;
+  float:left;
 }
