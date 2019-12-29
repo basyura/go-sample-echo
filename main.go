@@ -27,8 +27,12 @@ func main() {
 
 	e := echo.New()
 
+	funcMap := template.FuncMap{
+		"safehtml": func(text string) template.HTML { return template.HTML(text) },
+	}
+
 	e.Renderer = &Template{
-		templates: template.Must(template.ParseGlob("views/*.html")),
+		templates: template.Must(template.New("").Funcs(funcMap).ParseGlob("views/*.html")),
 	}
 
 	// url パス, ディレクトリパス

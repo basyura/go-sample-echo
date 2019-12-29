@@ -2,6 +2,8 @@
  *
  */
 window.onload = function() {
+  return
+
   var ctx = document.getElementById('myChart').getContext('2d');
 
   params = {

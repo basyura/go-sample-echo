@@ -9,25 +9,7 @@
   <input type="text" name="id" />
   <input type="submit" />
 </form>
-<div id="leftWrapper">
-  <!--
-  <ul>
-    <li>aaaaaaaaaaa</li>
-    <li>bbbbbbbbbbb</li>
-    <li>ccccccccccc</li>
-    <li>ddddddddddd</li>
-    <li>eeeeeeeeeee</li>
-    <li>fffffffffff</li>
-    <li>ggggggggggg</li>
-    <li>hhhhhhhhhhh</li>
-    <li>iiiiiiiiiii</li>
-  </ul>
-  -->
+<div class="wrapper">
+  {{.Table|safehtml}}
 </div>
-<div class="chartWrapper">
-  <div class="chartAreaWrapper">
-    <canvas id="myChart" width="0"></canvas>
-  </div>
-</div>
-
 {{end}}

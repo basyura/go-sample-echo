@@ -1,27 +1,74 @@
-.chartWrapper {
-  wdith:100%;
-  overflow-x:auto;
+
+.wrapper {
+  width: 1400px;
+  height: 500px;
+  overflow: scroll;
 }
 
-.chartAreaWrapper {
-    height: 400px;
-    width: 3000px;
-/*  margin-left:-27px; */
+table {
+  table-layout: fixed;
+  width: 100%;
 }
 
-#leftWrapper {
-  width: 200px;
-  line-height:26px;
-  float:left;
+th {
+  background-color: #666666;
+  color: white;
 }
 
-#details {
-  margin-top:8px;
+thead tr th {
+  width: 1px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-#details tr {
-  height:26px;
+tbody tr th {
+  position: sticky;
+  left: 0;
 }
-#details td {
-  border-top: 1px  solid #EAEAEA;
+
+tbody .head2 {
+  text-align: right;
+  padding-right: 10px;
+}
+
+th,
+td {
+  padding: 1px;
+}
+
+.head_cmd {
+  left: 0;
+  z-index: 3;
+  width: 400px;
+}
+
+.head_cmd_value {
+  z-index: 2;
+  text-align: left;
+}
+
+.head_time {
+  left: 404;
+  z-index: 3;
+  width: 70px;
+}
+
+.head_time_value {
+  text-align: right;
+  padding-right: 5px;
+  z-index: 2;
+}
+
+.pre {
+  background-color: green;
+}
+.web {
+  background-color: orange;
+}
+.comp {
+  background-color: blue;
+}
+.diff {
+  background-color: red;
 }
