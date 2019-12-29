@@ -90,4 +90,25 @@ window.onload = function() {
     params.data.labels.push((i * 50).toString());
   }
   var chart = new Chart(ctx, params);
+
+  loadTable();
 };
+
+function loadTable() {
+  var buf = '<table id="details" >';
+  buf += '<tr><td>aaaaaaaaaaaaa</td><td>100</td></tr>';
+  buf += '<tr><td>bbbbbbbbbbbbb</td><td>200</td></tr>';
+  buf += '<tr><td>ccccccccccccc</td><td>300</td></tr>';
+  buf += '<tr><td>ddddddddddddd</td><td>500</td></tr>';
+  buf += '<tr><td>ddddddddddddd</td><td>500</td></tr>';
+  buf += '<tr><td>ddddddddddddd</td><td>500</td></tr>';
+  buf += '<tr><td>ddddddddddddd</td><td>500</td></tr>';
+  buf += '<tr><td>ddddddddddddd</td><td>500</td></tr>';
+  buf += '<tr><td>ddddddddddddd</td><td>500</td></tr>';
+  buf += '<tr><td>ddddddddddddd</td><td>500</td></tr>';
+  buf += '<tr><td>ddddddddddddd</td><td>500</td></tr>';
+  buf += '</table>';
+
+  var wrappr = document.getElementById('leftWrapper');
+  wrappr.insertAdjacentHTML('afterbegin', buf);
+}

@@ -20,7 +20,7 @@ func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Con
 
 // サイトで共通情報
 var serviceInfo = dto.ServiceInfo{
-	Title: "サイトのタイトル",
+	Title: "サブタイトル",
 }
 
 func main() {

@@ -4,13 +4,24 @@
 }
 
 .chartAreaWrapper {
-    height: 300px;
+    height: 400px;
     width: 3000px;
 /*  margin-left:-27px; */
 }
 
-.leftWrapper {
+#leftWrapper {
   width: 200px;
   line-height:26px;
   float:left;
+}
+
+#details {
+  margin-top:8px;
+}
+
+#details tr {
+  height:26px;
+}
+#details td {
+  border-top: 1px  solid #EAEAEA;
 }
